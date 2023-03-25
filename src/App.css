@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.dice {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(auto, 50px));
+  grid-template-columns: repeat(5, minmax(auto, 1fr));
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .dice {
+    grid-template-rows: repeat(2, minmax(auto, 50px));
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dice {
+    grid-template-rows: repeat(3, minmax(auto, 50px));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+}
+
+.dice > div {
+  height: 70px;
+  width: 70px;
+  radius: 3.81px;
+  background: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 3.81277px;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  font-family: Karla;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
