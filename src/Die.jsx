@@ -1,5 +1,12 @@
-function Die(props) {
-  return <div>{props.number}</div>;
-}
+import React from 'react';
 
-export default Die;
+export default function Die(props) {
+  const styles = {
+    backgroundColor: props.on ? '#39aa5f9e' : 'white',
+  };
+  return (
+    <div className="die-face" onClick={props.clickedOn} style={styles}>
+      <h2 className="die-num">{props.value}</h2>
+    </div>
+  );
+}
