@@ -25,4 +25,5 @@ body {
   display: flex;
   place-items: center;
   place-content: center;
+  padding: 20px;
 }

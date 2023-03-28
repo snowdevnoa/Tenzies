@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Die from './Die';
 import './App.css';
+import Confetti from 'react-confetti';
 
 function App() {
   const [dice, setDice] = useState(allNewDice());
@@ -62,13 +63,20 @@ function App() {
         key={die.id}
         value={die.value}
         on={die.on}
-        clickedOn={(e) => pressdOn(e, die.id)}
+        isHeld={(e) => pressdOn(e, die.id)}
       />
     );
   });
 
   return (
-    <main className="App bg-[#F5F5F5] h-[80vh] w-[80vw] md:w-[60vw] max-w-[800px] rounded flex flex-col justify-center items-center">
+    <main className="bg-[#F5F5F5] min-h-[80vh] w-[80vw] md:w-[60vw] max-w-[800px] rounded flex flex-col justify-center items-center py-[2rem]">
+      {gameWin && <Confetti className="confetti" />}
+
+      <h1 className="text-[3rem] font-bold">Tenzies</h1>
+      <h2 className="m-7 text-center max-w-[450px] text-[#4A4E74]">
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </h2>
       <div className="dice">{uiDice}</div>
       <button
         onClick={gameWin ? resetGame : reRoll}
